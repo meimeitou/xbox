@@ -15,6 +15,7 @@ if { "$PASSWORD" == "" } {
     send_user "\n"
 }
 
+# ssh -J alice@bastion.example.com $USER@$HOST # 使用堡垒机登录
 spawn ssh $USER@$HOST
 expect {
     "fingerprint"  {send "yes\r";exp_continue}
