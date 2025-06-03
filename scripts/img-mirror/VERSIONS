@@ -1,0 +1,4 @@
+kubernetesui/metrics-scraper:v1.0.8                               kubespray kubernetesui-metrics-scraper:v1.0.8
+kubernetesui/dashboard:v2.7.0                                     kubespray kubernetesui-dashboard:v2.7.0
+registry.k8s.io/kube-apiserver:v1.25.6                            kubespray kube-apiserver:v1.25.6
+registry.k8s.io/kube-controller-manager:v1.25.6                   kubespray kube-controller-manager:v1.25.6
