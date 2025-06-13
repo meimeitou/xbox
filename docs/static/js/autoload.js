@@ -33,8 +33,13 @@ if (screen.width >= 768) {
 	]).then(() => {
 		initWidget({
 			waifuPath: live2d_path + "waifu-tips.json",
-			// apiPath: "https://live2d.fghrsh.net/api/",
-			cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/"
+            apiPath: "https://live2d.fghrsh.net/api/",
+            cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/",
+            modelId: 1,
+			modelTexturesId: 20,
+            tools: [
+                "home", "close" // 不包含 "switch" 即可隐藏切换
+            ]
 		});
 	});
 }

@@ -1,7 +1,7 @@
 baseURL = 'https://meimeitou.github.io/xbox/'
 relativeURLs = true
 canonifyURLs = true
-languageCode = 'en-us'
+languageCode = "zh-cn"
 title = ''
 
 [module]

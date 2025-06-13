@@ -1,6 +1,6 @@
 +++
 title = "virtualbox VRDP"
-date =  2023-05-16T16:17:40+08:00
+date =  2025-05-16T16:17:40+08:00
 description= "virtualbox 远程桌面"
 weight = 5
 +++
@@ -20,7 +20,6 @@ By default, the VRDP server uses TCP port 3389. 端口只能被一个占用，�
 修改端口可以使用图形界面中的设置或者使用命令参数`--vrde-port` 在 `VBoxManage modifyvm` 命令中。用逗号隔开可以开启多个端口，或者用-隔开表示范围。然后VRDP程序会选择绑定一个端口。示例： `VBoxManage modifyvm VM-name --vrde-port 5000,5010-5012`
 
 然后使用 `VBoxManage showvminfo`查看具体暴露的端口
-
 
 使用rdesktop连接：
 
