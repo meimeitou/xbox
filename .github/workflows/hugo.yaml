@@ -63,6 +63,8 @@ jobs:
             hugo-
       - name: Configure Git
         run: git config core.quotepath false
+      - name: hugo mod get
+        run: hugo mod get -u ./...
       - name: Build with Hugo
         run: |
           hugo \
