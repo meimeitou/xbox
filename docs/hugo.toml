@@ -18,3 +18,7 @@ title = ''
 [params.author]
     emailname = '772006843@qq.com'
     name = 'meimeitou'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
