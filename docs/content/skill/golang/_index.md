@@ -1,6 +1,6 @@
 +++
-title = "玩家"
-weight = 1
+title = "Golang"
+type = "chapter"
 disableToc = false
 chapter = false
 +++

@@ -1,6 +1,6 @@
 +++
-title = "玩家"
-weight = 1
+title = "技术"
+weight = 10
 disableToc = false
 chapter = false
 +++

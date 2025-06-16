@@ -2,7 +2,7 @@ baseURL = 'https://meimeitou.github.io/xbox/'
 relativeURLs = false
 canonifyURLs = false
 languageCode = "zh-cn"
-title = ''
+title = 'Meimeitou'
 
 [module]
   [[module.imports]]

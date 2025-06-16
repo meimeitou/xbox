@@ -1,5 +1,6 @@
 +++
-title = "玩家"
+title = "Rust"
+type = "chapter"
 weight = 1
 disableToc = false
 chapter = false

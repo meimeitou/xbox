@@ -1,5 +1,4 @@
-<a id="logo" href="{{ .Site.Params.landingPageURL | default "/" | relLangURL }}">
-    <a id="R-logo" href="{{ partial "permalink.gotmpl" (dict "to" .Site.Home) }}">
-{{ partial "shortcodes/image.html" (dict "page" . "url" "/images/logo.png?border=false&inlinecontent&lightbox=false&shadow=false") }}
-        </a>
+<a id="R-logo" href="{{ partial "permalink.gotmpl" (dict "to" .Site.Home) }}">
+{{ partial "shortcodes/image.html" (dict "page" . "url" "/xbox/images/logo.png?border=false&inlinecontent&lightbox=false&shadow=false") }}
+<div class="logo-title">{{ .Site.Params.linkTitle | default .Site.Title }}</div>
 </a>

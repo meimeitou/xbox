@@ -1,6 +1,7 @@
 +++
-title = "玩家"
-weight = 1
+title = "Learn"
+type = "chapter"
+weight = 11
 disableToc = false
 chapter = false
 +++
