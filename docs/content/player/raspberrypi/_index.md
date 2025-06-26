@@ -1,12 +1,7 @@
 +++
 date = '2023-06-26T10:14:43+08:00'
-draft = true
 title = 'Raspberrypi'
 +++
-
-子目录：
-
-{{%children depth="3" %}}
 
 ## 什么是 Raspberry Pi？
 
