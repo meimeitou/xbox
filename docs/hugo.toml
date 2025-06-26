@@ -4,6 +4,17 @@ canonifyURLs = false
 languageCode = "zh-cn"
 title = 'Meimeitou'
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [["$$", "$$"], ["\\[", "\\]"]]
+          inline = [["$", "$"], ["\\(", "\\)"]]
+
 [module]
   [[module.imports]]
     path = 'github.com/McShelby/hugo-theme-relearn'
@@ -15,6 +26,7 @@ title = 'Meimeitou'
   themeVariant = ['green', 'learn', 'relearn-light', 'relearn-dark']
   additionalContentLanguage = ['zh']
   showVisitedLinks = false
+  math = true
 
 [params.author]
     emailname = '772006843@qq.com'

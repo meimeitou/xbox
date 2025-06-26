@@ -1,8 +1,10 @@
 +++
 title = "Golang"
-type = "chapter"
-disableToc = false
-chapter = false
+weight = 1
+chapter = true
+pre = "<b>X. </b>"
+description= "description"
+alwaysopen = false
 +++
 
 {{%children depth="3" description="true" %}}

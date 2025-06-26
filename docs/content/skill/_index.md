@@ -1,5 +1,5 @@
 +++
-title = "技术"
+title = "技术好难"
 weight = 10
 disableToc = false
 chapter = false

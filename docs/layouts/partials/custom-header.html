@@ -5,5 +5,41 @@
     --MENU-WIDTH-L: 14.75rem;
     --MAIN-WIDTH-MAX: 900rem;
 }
+
+/* 数学公式样式优化 */
+.katex {
+    font-size: 1.1em !important;
+}
+.katex-display {
+    margin: 1em 0 !important;
+    text-align: center;
+}
 </style>
+
+{{ if or .Params.math .Site.Params.math }}
+<!-- KaTeX 数学公式支持 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        // 自定义分隔符
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false},
+            {left: '\\[', right: '\\]', display: true}
+        ],
+        // 渲染选项
+        throwOnError: false,
+        errorColor: '#cc0000',
+        // 跳过某些标签
+        ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    });
+});
+</script>
+{{ end }}
+
 <script src="js/autoload.js"></script>

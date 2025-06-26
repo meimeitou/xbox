@@ -1,9 +1,9 @@
 +++
 title = "{{ replace .Name "-" " " | title }}"
-type = "chapter"
 disableToc = false
 chapter = false
 weight = 1
+date = '{{ .Date }}'
 +++
 
 {{%children style="h4" description="true" %}}

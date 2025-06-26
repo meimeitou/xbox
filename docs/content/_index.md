@@ -1,8 +1,9 @@
 +++
-title = "Home"
+title = "MMT"
 type = "home"
+date = 2023-10-01T00:00:00+08:00
 +++
 
-## Welcome to the Documentation
+## Meimeitou
 
-This documentation provides comprehensive information about our project, including setup instructions, usage guidelines, and API references.
+  没人看我可就要放飞自我了呀！

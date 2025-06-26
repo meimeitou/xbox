@@ -1,9 +1,10 @@
 +++
 title = "Rust"
-type = "chapter"
-weight = 1
-disableToc = false
-chapter = false
+weight = 2
+chapter = true
+pre = "<b>X. </b>"
+description= "description"
+alwaysopen = false
 +++
 
 {{%children depth="3" description="true" %}}
