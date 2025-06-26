@@ -1,13 +1,13 @@
 +++
-title = '大语言模型'
-date =  2024-03-03T14:51:08+08:00
+title = '深度学习'
+date =  2022-11-14T17:54:05+08:00
 description= "应用技术"
-weight = 3
+weight = 2
 chapter= true
 alwaysopen = false
 pre= "<b>4. </b>"
 +++
 
-来点智能的!
+太好了，长了点脑子了!
 
 {{%children style="h4" %}}
