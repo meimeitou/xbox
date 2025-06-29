@@ -47,6 +47,7 @@ Kubernetes Pod 中的其他容器都是Pod所属pause容器的网络，创建过
 5. pod 中其他的容器都使用 pause 容器的网络
 
 ## Veth设备
+
 这个被隔离的容器进程，要跟其他Network Namespace里的容器进程、甚至宿主机进行交互，需要一个联通到宿主机的连线。通过创建Veth设备可以解决这个问题：
 
 veth和其它的网络设备都一样，一端连接的是内核协议栈
@@ -65,8 +66,8 @@ type CNI interface {
     DelNetwork (net *NetworkConfig, rt *RuntimeConf) error
 }
 ```
-该接口只有四个方法，添加网络、删除网络、添加网络列表、删除网络列表。
 
+该接口只有四个方法，添加网络、删除网络、添加网络列表、删除网络列表。
 
 ## CNI 插件
 
@@ -102,6 +103,7 @@ Flannel 规定宿主机下各个Pod属于同一个子网，不同宿主机下的
 - host-gw 模式：无需 flannel.1 这样的中间设备，直接宿主机当作子网的下一跳地址，性能最强；
 
 #### UDP 模式
+
   模式已经不推荐使用，性能差。
 
 #### VxLAN 模式
@@ -131,6 +133,7 @@ Calico在每一个计算节点利用Linux Kernel实现了一个高效的vRouter(
 基于bird 做BGP。
 
 Calico网络方式:
+
 - IPIP: 从字面来理解，就是把一个IP数据包又套在一个IP包里，即把 IP 层封装到 IP 层的一个 tunnel。 针对一些跨网络段的网络联通。
 - BGP: 三层IP连接，没有额外开销。
 
@@ -160,6 +163,7 @@ XDP（eXpress Data Path）提供了一个内核态、高性能、可编程 BPF �
 XDP hook 位于网络驱动的快速路径上，XDP 程序直接从接收缓冲区（receive ring）中将 包拿下来，无需执行任何耗时的操作，例如分配 skb 然后将包推送到网络协议栈，或者 将包推送给 GRO 引擎等等。因此，只要有 CPU 资源，XDP BPF 程序就能够在最早的位置执 行处理。
 
 使用案例：
+
 - DDos防御，防火墙
 - 转发和负载均衡
 - 栈前（Pre-stack）过滤/处理
@@ -176,6 +180,7 @@ tc BPF 程序在数据路径上的 ingress 和 egress 点都可以触发；而 X
 - egress hook sch_handle_egress()：由 __dev_queue_xmit() 触发
 
 tc BPF 使用案例:
+
 - 为容器落实策略（Policy enforcement）
 - 转发和负载均衡
 - 流抽样（Flow sampling）、监控

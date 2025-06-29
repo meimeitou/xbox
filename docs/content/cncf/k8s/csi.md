@@ -17,8 +17,9 @@ weight = 5
 容器存储接口（Container Storage Interface），简称 CSI，CSI 试图建立一个行业标准接口的规范，借助 CSI 容器编排系统（CO）可以将任意存储系统暴露给自己的容器工作负载。于 v1.13 版本正式 GA。
 
 ref:
-- https://developer.aliyun.com/article/754434
-- https://developer.aliyun.com/article/783464
+
+- <https://developer.aliyun.com/article/754434>
+- <https://developer.aliyun.com/article/783464>
 
 ## 组件介绍
 
@@ -42,12 +43,10 @@ ref:
 
 ![cri](../images/container-storage-interface_diagram1.png)
 
-
 其中：
 
 - 绿色部分：Identity、Node、Controller 是需要开发者自己实现的，被称为 Custom Components。
 - 粉色部分：node-driver-registrar、external-attacher、external-provisioner 组件是 Kubernetes 团队开发和维护的，被称为 External Components，它们都是以 sidecar 的形式与 Custom Components 配合使用的。
-
 
 **POD挂载pv流程如下：**
 
@@ -70,7 +69,6 @@ name]**（以 iscsi 为例）；
 ### External Components
 
 External Components 都是以 sidecar 的方式提供使用的。当开发完三个 Custom Components 之后，开发者需要根据存储的特点，选择合适的 sidecar 容器注入到 Pod 中。这里的 External Components 除了前面图中提到的 node-driver-registrar、external-attacher、external-provisioner 还有很多，可以参考官方文档，这里对常用的 sidecars 做一些简单介绍：
-
 
 - livenessprobe: 监视 CSI 驱动程序的运行状况，并将其报告给 Kubernetes。这使得 Kubernetes 能够自动检测驱动程序的问题，并重新启动 pod 来尝试修复问题。
 - node-driver-registrar: 从 CSI driver 获取驱动程序信息（通过 NodeGetInfo 方法），并使用 kubelet 插件注册机制在该节点上的 kubelet 中对其进行注册。
@@ -134,4 +132,3 @@ spec:
 ```
 
 ## CSI 驱动
-

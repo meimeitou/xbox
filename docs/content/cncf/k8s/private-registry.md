@@ -33,7 +33,6 @@ kubectl create secret generic regcred --from-file=.dockerconfigjson=~/.docker/co
 kubectl get secret regcred --output=yaml
 ```
 
-
 ## 2、应用
 
 添加secret到serviceaccount:
@@ -43,7 +42,6 @@ kubectl patch serviceaccount default -p '{"imagePullSecrets": [{"name": "regcred
 ```
 
 添加到默认的`sa`后整个namespace将默认有拉取权限，`pod`默认使用`sa` 是`default`
-
 
 针对单个pod也能添加：
 

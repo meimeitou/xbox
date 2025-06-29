@@ -27,10 +27,9 @@ weight = 5
 
 下图是docker,k8s,oci,cri-o,containerd,runc的关系图：
 
-ref: https://www.tutorialworks.com/difference-docker-containerd-runc-crio-oci/
+ref: <https://www.tutorialworks.com/difference-docker-containerd-runc-crio-oci/>
 
 ![cri](../images/container-ecosystem.drawio.png)
-
 
 ## CRI 架构
 
@@ -105,7 +104,6 @@ ImageService：提供了从镜像仓库拉取、查看、和移除镜像的 RPC�
 
 CRI 是由 SIG-Node 来维护的。
 
-
 通过 CRI-O 间接支持 CRI 的后端.
 
 当前同样存在一些只实现了 OCI 标准的容器，但是它们可以通过 CRI-O 来作为 Kubernetes 的容器运行时。CRI-O 是 Kubernetes 的 CRI 标准的实现，并且允许 Kubernetes 间接使用 OCI 兼容的容器运行时。
@@ -114,12 +112,12 @@ CRI 是由 SIG-Node 来维护的。
 - Kata Containers：符合 OCI 规范，可以通过 CRI-O 或 Containerd CRI Plugin 来兼容 CRI。
 - gVisor：由谷歌推出的容器运行时沙箱 (Experimental)，可以通过 CRI-O 来兼容 CRI。
 
-
 ## OCI规范
 
 OCI规范（Open Container Initiative 开放容器标准），该规范包含两部分内容：容器运行时标准（runtime spec）、容器镜像标准（image spec）
 
 OCI项目及兼容OCI规范的容器运行时：
+
 - runc: 基于namespace,cgroup,seccomp&MAC技术实现的进程资源隔离
 - runv: 基于Hypervisor，兼容OCI规范的虚拟机运行时
 - kata-runtime:  from the `Katacontainers` project，它将OCI规范实现为单个轻量级虚拟机(硬件虚拟化)
@@ -134,6 +132,7 @@ OCI项目及兼容OCI规范的容器运行时：
 ### OSContainerRuntime
 
 OSContainerRuntime下的Linux Container共享Linux内核，使用namespace、cgroup等技术隔离进程资源。namespace只包含了六项隔离（UTS、IPC、PID、Network、Mount、User），并非所有Linux资源都可以通过这些机制控制，比如时间和Keyring，另外，容器内的应用程序和常规应用程序使用相同的方式访问系统资源，直接对主机内核进行系统调用。因此即使有了很多限制，内核仍然向恶意程序暴露过多的攻击面。
+
 ### HyperRuntime
 
 HyperRuntime下的VM Container容器各自拥有独立Linux内核，资源隔离比Linux Container更彻底。但并不是说使用VM容器用户就可以高枕无忧，只是VM容器的攻击面比Linux容器小了很多，黑客要逃逸到宿主机就只剩下Hypervisor这个入口，所以说没有绝对的安全，相对来说VM容器更安全。另一方面，VM容器的性能比不上Linux容器，因为Hypervisor这一层带来的性能损耗，在Linux容器这边是不存在的。
@@ -148,7 +147,6 @@ unikernel的特点如下：性能好，应用程序和内核在同一地址空�
 
 ![cri](../images/cri.jpg)
 
-
 ## runtime对比
 
 ### docker
@@ -156,24 +154,31 @@ unikernel的特点如下：性能好，应用程序和内核在同一地址空�
   最早原生支持的运行时，目前由于发展原因弃用。Kubernetes 只能与 CRI 通信，因此要与 Docker 通信，就必须使用桥接服务。因为docekr其实没有实现cri标准接口，是由一个叫做`Dockershim`的组件来做桥梁代理的。新版已经丢弃这个组件。
   
   目前也可以使用`cri-dockerd`来继续使用docker engine作为后端。
+
 ### containerd
   
   Containerd项目是从早期的docker源码中提炼出来的，它使用CRI插件来向kubelet提供CRI接口服务。同时它也是docekr的runtime。
 
   组件由`Doekr`组织提供支持。
+
 ### cri-o
 
   CRI-O完整实现CRI接口功能，并且严格兼容OCI标准，CRI-O比Containerd更专注，它只服务于Kubernetes（而Containerd除支持Kubernetes CRI，还可用于Docker Swarm），从官网上我们可以了解到CRI-O项目的功能边界：
 
   组件由`Red Hat`组织提供支持。
+
 ### rkt
+
    当前可能有部分不兼容cri，略。
+
 ### fraki
 
    基于hypervisor虚拟机管理程序的容器运行时。具有更高的安全性，内核独立，混合运行。
+
 ### PouchContainer
 
    PouchContainer是阿里开源的容器引擎，它内部有一个CRI协议层和cri-manager模块，用于实现CRI shim功能。它的技术优势包括：
+
    1. 强隔离，包括的安全特性：基于Hypervisor的容器技术、lxcfs、目录磁盘配额、补丁Linux内核等。
    2. 基于P2P镜像分发，利用P2P技术在各节点间互传镜像，减小镜像仓库的下载压力，加快镜像下载速度。
    3. 富容器技术，PouchContainer的容器中除了运行业务应用本身之外，还有运维套件、系统服务、systemd进程管家等。

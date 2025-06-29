@@ -48,7 +48,7 @@ kubebuilder还帮我们做了以下的额外工作：
 
 ## 开发
 
-git项目： https://github.com/kubernetes-sigs/kubebuilder
+git项目： <https://github.com/kubernetes-sigs/kubebuilder>
 
 ### 安装
 
@@ -68,4 +68,3 @@ cd project
 # so all API groups will be <group>.tutorial.kubebuilder.io.
 kubebuilder init --domain tutorial.kubebuilder.io --repo tutorial.kubebuilder.io/project
 ```
-

@@ -10,7 +10,7 @@ weight = 2
 - [Kubernetes中的Pod内几个容器之间的关系?](#kubernetes中的pod内几个容器之间的关系)
 - [一个经典Pod的完整生命周期是怎么样的](#一个经典pod的完整生命周期是怎么样的)
 - [详述kube-proxy的工作原理](#详述kube-proxy的工作原理)
-  - [kube-proxy & service必要说明](#kube-proxy--service必要说明)
+  - [kube-proxy \& service必要说明](#kube-proxy--service必要说明)
   - [工作原理](#工作原理)
   - [代理模式](#代理模式)
     - [iptables](#iptables)
@@ -38,6 +38,7 @@ weight = 2
 Pause 容器，又叫 Infra 容器。
 
 特点：
+
 - 镜像非常小，目前在 700KB 左右
 - 永远处于 Pause (暂停) 状态
 
@@ -74,6 +75,7 @@ Pod内容器共用Linux命名空间，共用pid空间。Pod 内的多个容器�
 4. node节点接收到新的pod创建任务，在node节点上根据配置拉取镜像，创建Pod。
 
 Pod生命周期：
+
 - Pending： Pod任务被Kubelete接受，包括等待调度，下载镜像时间
 - Running： Pod中所有容器运行。
 - Succeeded： Pod正常终止。
@@ -108,9 +110,7 @@ Readiness(就绪性检测)：判断容器是否准备就绪并对外提供服务
 
  HTTPGetAction：通过向容器IP地址的某指定端口的path发起HTTP GET请求。
 
- 
-
-4. 容器的重启策略： 
+4. 容器的重启策略：
 
 定义是否重启Pod对象
 
@@ -121,8 +121,6 @@ OnFailure：仅在Pod出现错误时才重启
 Never：从不
 
 注：一旦Pod绑定到一个节点上，就不会被重新绑定到另一个节点上，要么重启，要么终止
-
- 
 
 5. pod的终止过程
 
@@ -153,7 +151,6 @@ Never：从不
 3. Node节点接收到Pod删除任务，尝试删除Pod，
 4. Kubelet 请求 API Server 将此 Pod 资源宽限期设置为0从而完成删除操作
 
-
 ## 详述kube-proxy的工作原理
 
 ### kube-proxy & service必要说明
@@ -166,7 +163,6 @@ Never：从不
 - service另外一个重要作用是，一个服务后端的Pods可能会随着生存灭亡而发生IP的改变，service的出现，给服务提供了一个固定的IP，而无视后端Endpoint的变化。
 
 Kube-proxy 是 kubernetes 工作节点上的一个网络代理组件，运行在每个节点上。Kube-proxy维护节点上的网络规则，实现了Kubernetes Service 概念的一部分 。它的作用是使发往 Service 的流量（通过ClusterIP和端口）负载均衡到正确的后端Pod。
-
 
 ### 工作原理
 
@@ -182,7 +178,7 @@ kube-proxy 监听 API server 中 资源对象的变化情况，包括以下三�
 
 如果你启用了服务拓扑，那么 kube-proxy 也会监听 node 信息 。服务拓扑（Service Topology）可以让一个服务基于集群的 Node 拓扑进行流量路由。 例如，一个服务可以指定流量是被优先路由到一个和客户端在同一个 Node 或者在同一可用区域的端点。
 
-###  代理模式
+### 代理模式
 
 目前 Kube-proxy 支持4中代理模式：
 
@@ -256,6 +252,7 @@ deployment会自动创建rs，在应用升级的时候，deployment会为应用�
 2. kube-scheduler 与 kube-controller-manager 优化
 
 kube-controller-manager 和 kube-scheduler 是通过 leader election 实现高可用，启用时需要添加以下参数:
+
 ```shell
 --leader-elect=true
 --leader-elect-lease-duration=15s
@@ -263,6 +260,7 @@ kube-controller-manager 和 kube-scheduler 是通过 leader election 实现高�
 --leader-elect-resource-lock=endpoints
 --leader-elect-retry-period=2s
 ```
+
 - 控制 QPS: 与 kube-apiserver 通信的 qps 限制
 
 3. Kubelet节点 优化
@@ -304,6 +302,7 @@ kube-controller-manager 和 kube-scheduler 是通过 leader election 实现高�
 某个节点由于一些原因故障了，触发将节点上的POD排空操作。这时这个节点上的POD会漂移到其他合适的节点，由于被调度的节点资源同样吃紧，同样会导致这个节点notready，然后这个节点上的POD被排到其它节点，导致雪崩发生。
 
 要预防雪崩发生：
+
 - 保证节点系统组件有足够资源能运行。kubelete优化, Kubelet Node Allocatable用来为Kube组件和System进程预留资源，从而保证当节点出现满负荷时也能保证Kube和System进程有足够的资源。
 - 完善的资源监控设施，保证大部分节点资源负载都不超过阈值，监控非正常POD的资源大幅增加并预警。
 - 设置合理的POD资源限制条件，让某些大油耗POD不能调度到少资源的节点。
@@ -314,6 +313,7 @@ kube-controller-manager 和 kube-scheduler 是通过 leader election 实现高�
 主要实现集群中svc这一概率的功能。通过service ip访问后端POD应用。
 
 目前的实现方案有：
+
 - 基于iptable的nat功能
 - 基于ipset的实现
 - 基于bpf的实现
@@ -339,7 +339,7 @@ sidecar的思想核心就是：不侵入主容器的前提下，可以进行服�
 
 基于k8s原生资源可以利用service的label选择后端，同时选择新旧POD后端。缺点就是没有网关实现的灵活。
 
-## 介绍Kubernetes实践中踩过的比较大的一个坑和解决方式。
+## 介绍Kubernetes实践中踩过的比较大的一个坑和解决方式
 
 - 配置问题导致的集群网络不通： calico网络插件针对不同的网络环境有不同的配置。
 - 外宣集群IP导致
