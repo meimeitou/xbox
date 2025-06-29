@@ -1,5 +1,5 @@
 +++
-title = "副业重要"
+title = "精神食粮"
 date= 2021-02-24T10:52:52+08:00
 weight= 3
 disableToc = false
