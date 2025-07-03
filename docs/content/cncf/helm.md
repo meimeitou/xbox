@@ -19,7 +19,7 @@ helm和kubectl一样就是个go的二进制包，
 
 当然闲麻烦也能用包管理器安装：
 
-mac: 
+mac:
 
 ```shell
 brew install helm
@@ -34,6 +34,7 @@ scoop install helm
 ```
 
 apt包：
+
 ```shell
 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
 sudo apt-get install apt-transport-https --yes
@@ -77,6 +78,7 @@ helm install <name> bitnami/nginx -n <namespace> [-f your-values.yaml]
 - CronJob: 定时任务
 
 其它常用类型：
+
 - Service: 定义集群内部或者外部vip
 - ServiceAccount: 服务账号
 - HorizontalPodAutoscaler: 自动扩缩容配置
@@ -92,7 +94,7 @@ helm create chartname
 
 直接创建会发现已经填充了很多文件内容，下面是文件内容解释：
 
-```
+```txt
 chartname/
   Chart.yaml          # 包含 Chart 基本信息（例如版本和名称）的 YAML 文件。
   LICENSE             # （可选）包含 Chart 许可证的纯文本文件。
@@ -105,7 +107,7 @@ chartname/
   templates/NOTES.txt # （可选）包含使用说明的纯文本文件。
 ```
 
-### Chart.yaml 文件:
+### Chart.yaml 文件
 
 您必须为 Chart 提供 chart.yaml 文件。下面是一个示例文件，每个字段都有说明。
 
@@ -194,7 +196,6 @@ helm install ./chartname --dry-run
 ```
 
 根据报错修改自己的模板配置。
-
 
 ## 部署完后的操作
 

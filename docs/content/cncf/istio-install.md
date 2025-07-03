@@ -5,7 +5,7 @@ description= "description"
 weight = 5
 +++
 
-# install
+## install
 
 1、从 `https://github.com/istio/istio/releases`下载对于版本
 
@@ -13,6 +13,7 @@ weight = 5
 
 2、解压 istio-1.10.0-linux-amd64.tar.gz
 得到：
+
 - 二级制istioctl文件
 - samples 测试项目安装文件
 - manifests helm文件
@@ -20,6 +21,7 @@ weight = 5
 3、使用istioctl安装
 
 使用特定的profile安装：不同的profile组件和安装参数不同；
+
 ```shell
 # 使用default安装
 istioctl install --set profile=default

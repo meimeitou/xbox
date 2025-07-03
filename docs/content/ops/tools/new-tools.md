@@ -6,7 +6,8 @@ weight = 1
 +++
 
 ref:
-- https://mp.weixin.qq.com/s/e9wU7eArHH0hisRjiXWpiw
+
+- <https://mp.weixin.qq.com/s/e9wU7eArHH0hisRjiXWpiw>
 
 ## dust
 

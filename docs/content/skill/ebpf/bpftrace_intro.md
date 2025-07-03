@@ -1,5 +1,5 @@
 +++
-title = 'Bpftrace.intro'
+title = 'Bpftrace介绍'
 +++
 
 bpftrace 是一种基于 eBPF 的高层次追踪工具，支持用类似 DTrace 的脚本语言编写内核和用户空间的追踪逻辑。bpftrace 适用于 Linux 性能分析、故障排查、安全监控等多种场景。本文将简要介绍 bpftrace 的安装、基本用法及常见示例。
