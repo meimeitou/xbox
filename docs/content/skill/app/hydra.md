@@ -5,14 +5,14 @@ description= "oauth2 and oidc server"
 weight = 3
 +++
 
-# 一、示例
 
-### 1、下载代码 
+### 1、下载代码
+
 ```shell
 git clone https://github.com/ory/hydra.git
 ```
 
-### 2、启动服务：
+### 2、启动服务
 
 ```shell
 docker-compose -f quickstart.yml \
@@ -87,7 +87,7 @@ docker-compose -f quickstart.yml exec hydra \
     --scope openid,offline
 ```
 
-然后登打开： http://127.0.0.1:5555
+然后登打开： <http://127.0.0.1:5555>
 
 ![open-hydra](/images/app/open-hydra.png)
 
@@ -100,4 +100,3 @@ docker-compose -f quickstart.yml exec hydra \
 
 获取用户信息
 ![info](/images/app/hydra-getinfo.png)
-

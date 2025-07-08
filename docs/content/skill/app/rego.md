@@ -6,23 +6,25 @@ weight = 9
 +++
 
 ## rego 基础
+
 `https://www.openpolicyagent.org/docs/latest/policy-reference/`
 
 OPA基于一种数据查询语言Datalog实现了描述语言Rego
+
 |语法|例子|
 |-| -|
-|上下文	|data|
-|输入	|input
-|索引取值	|data.bindings[0]
-|比较	|“alice” == input.subject.user
-|赋值|	user := input.subject.user
-|规则|	< Header > { < Body > }
-|规则头|	< Name > = < Value > { … } 或者 < Name > { … }
-|规则体|	And运算的一个个描述
-|多条同名规则|	Or运算的一个规则
-|规则默认值	|default allow = false
-|函数|	fun(x) { … }
-|虚拟文档|	doc[x] { … }
+|上下文 |data|
+|输入 |input
+|索引取值 |data.bindings[0]
+|比较 |“alice” == input.subject.user
+|赋值| user := input.subject.user
+|规则| < Header > { < Body > }
+|规则头| < Name > = < Value > { … } 或者 < Name > { … }
+|规则体| And运算的一个个描述
+|多条同名规则| Or运算的一个规则
+|规则默认值 |default allow = false
+|函数| fun(x) { … }
+|虚拟文档| doc[x] { … }
 
 输入会挂在input对象下，用到的上下文（就是规则决策基于的源数据）会挂在data对象
 
@@ -44,11 +46,14 @@ x == {"foo", "bar"}
 ```
 
 ### 数组
+
 ```shell
 val := arr[0]
 val := arr[count(arr)-1]
 ```
+
 ### 对象
+
 ```shell
 val := obj["foo"]
 ```
@@ -77,8 +82,6 @@ any_match = true{
 
 ```
 
-
-
 ```shell
 # 常量定义
 a = {1, 2, 3}
@@ -94,6 +97,7 @@ p { ... }
 ```
 
 重复定义
+
 ```shell
 default allow = false
 # 等价 allow = true { ...}
@@ -151,8 +155,8 @@ test_NAME { ... }
 data.foo.bar.deny with input.foo as {"bar": [1,2,3]}}
 ```
 
-
 ## build in function
+
 ```s
 ==,!=,<,> ...
 
@@ -171,6 +175,7 @@ s1 & s2 集合交集
 s1 | s2 集合并集
 s1 - s2 集合差集
 ```
+
 ```s
 object.get(object, key, default) 获取对象元素
 object.remove(object, keys) 删除
@@ -208,6 +213,7 @@ glob.match(pattern, delimiters, match)  全匹配 delimiters 默认[.]
 ```
 
 Bitwise 二进制
+
 ```s
 bits.or(x, y)
 bits.and(x, y)
@@ -231,7 +237,6 @@ is_null(x)
 type_name(x)  变量类型
 ```
 
-
 ```s
 base64.encode(x)
 base64.decode(string)
@@ -245,16 +250,19 @@ yaml.unmarshal(string)
 ```
 
 ### Token
+
 jwt 验证
 WT是由三段信息构成的，将这三段信息文本用.链接一起就构成了Jwt字符串
 jwt 分为三部分： header， palyload ， signature
 
 第三部分：
+
 ```
 header (base64后的)
 payload (base64后的)
 secret
 ```
+
 base64加密
 
 ```s
@@ -292,6 +300,7 @@ io.jwt.encode_sign({
 ```
 
 token验证
+
 ```s
 io.jwt.verify_rs256(string, certificate)
 io.jwt.verify_hs256(string, secret)
@@ -300,11 +309,12 @@ io.jwt.verify_hs384(string, secret)
 ```
 
 示例：
+
 ```s
 raw_result_hs256 := io.jwt.encode_sign_raw(
     `{"alg":"HS256","typ":"JWT"}`,
     `{}`,
-    `{"kty":"oct","k":"Zm9v"}`  	# "Zm9v" is the base64 URL encoded string "foo"
+    `{"kty":"oct","k":"Zm9v"}`   # "Zm9v" is the base64 URL encoded string "foo"
 )
 
 # Important!! - Use the un-encoded plain text secret to verify and decode
@@ -313,6 +323,7 @@ raw_result_parts_hs256 := io.jwt.decode_verify(raw_result_hs256, {"secret": "foo
 ```
 
 #### Time
+
 ```s
 time.now_ns()   timestamp now
 time.parse_ns(layout, value) 
@@ -320,10 +331,10 @@ time.date(ns)   output is of the form [year, month, day]
 
 ```
 
-
 ### Cryptography
 
 加密
+
 ```s
 crypto.x509.parse_certificates(certs)  certs 为证书内容base64编码后的string，解析结果为json
 crypto.x509.parse_certificate_request(csr)   输入为csr证书请求base64后的string，输出为csr请求json
@@ -336,7 +347,6 @@ crypto.sha256(string)
 walk(x, [path, value])
 
 graph.reachable(graph, initial)
-
 
 ```s
 package graph_reachable_example
@@ -363,6 +373,7 @@ org_chart_permissions[entity_name] = access {
 ```
 
 output:
+
 ```s
 > org_chart_graph
 {
@@ -384,13 +395,14 @@ output:
 http.send(request)
 
 example:
-```s
+
+```txt
 http.send({"method": "get", "url": "https://www.baidu.com", "tls_use_system_certs": true })
 ```
 
-
 ### NET
-```s
+
+```txt
 net.cidr_contains(cidr, cidr_or_ip)  ip包含 net.cidr_contains("127.0.0.1/24","127.0.0.64/26")
 net.cidr_intersects(cidr1, cidr2)  ip重叠
 net.cidr_expand(cidr)  展开ip段
@@ -464,6 +476,7 @@ set             = empty-set | non-empty-set
 non-empty-set   = "{" term { "," term } "}"
 empty-set       = "set(" ")"
 ```
+
 The grammar defined above makes use of the following syntax. See the Wikipedia page on EBNF for more details:
 
 ```s

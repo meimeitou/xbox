@@ -1,5 +1,5 @@
 +++
-title = "工具"
+title = "命令"
 date = 2022-07-15T09:21:13+08:00
 weight = 1
 chapter = true

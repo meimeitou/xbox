@@ -1,5 +1,5 @@
 +++
-title = "新工具"
+title = "new-tools"
 date =  2022-07-15T09:23:26+08:00
 description= "description"
 weight = 1
