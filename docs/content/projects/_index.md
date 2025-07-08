@@ -6,6 +6,6 @@ chapter = false
 pre= "<i class='fas fa-info-circle'></i> "
 +++
 
-想找极品项目请到<https://hellogithub.com/>扒一扒，啥都有，每月底定时更新一期。就不要在我这文档里浪费时间了，乖哈。
+想找极品项目请到<https://hellogithub.com/>扒一扒，啥都有，每月底定时更新一期。
 
-{{%children style="h4" description="true" %}}
+{{%children style="h4" description="false" %}}
