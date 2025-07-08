@@ -1,5 +1,6 @@
 +++
 title = 'Bpftool介绍'
+description = 'bpftool 是 Linux 内核提供的命令行工具，用于管理和调试 eBPF 程序和映射。本文将介绍 bpftool 的安装、基本语法、主要功能模块以及常用操作。'
 +++
 
 - [什么是 bpftool？](#什么是-bpftool)

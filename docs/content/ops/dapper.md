@@ -1,6 +1,7 @@
 +++
 date = '2025-06-16T18:09:01+08:00'
 title = 'Dapper'
+description = 'Dapper 是一个用于创建一致构建环境的工具，基于 Dockerfile 构建镜像并执行容器，简化软件构建和修改过程。'
 +++
 
 ## Dapper

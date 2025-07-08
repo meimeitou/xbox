@@ -1,6 +1,7 @@
 +++
 title = 'ebpf简介'
 weight = 1
+description = 'eBPF（extended Berkeley Packet Filter）是一种强大的内核扩展技术，允许开发者在内核空间动态运行自定义代码。本文将介绍 eBPF 的核心概念、主要应用场景、工作机制及其优势。'
 +++
 
 - [1. eBPF 的核心概念](#1-ebpf-的核心概念)

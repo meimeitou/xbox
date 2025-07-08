@@ -1,5 +1,6 @@
 +++
 title = 'BCC介绍'
+description = 'BCC（BPF Compiler Collection）是一个基于 eBPF 的强大工具集，方便开发者在 Linux 上编写、加载和运行 eBPF 程序。本文将带你快速了解 BCC 的基本使用方法。'
 +++
 
 BCC（BPF Compiler Collection）是一个基于 eBPF 的强大工具集，方便开发者在 Linux 上编写、加载和运行 eBPF 程序。它广泛用于性能分析、故障排查和安全监控领域。本文将带你快速了解 BCC 的基本使用方法。

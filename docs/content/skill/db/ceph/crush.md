@@ -1,5 +1,6 @@
 +++
 title = 'CRUSH算法详解'
+description = '深入理解CRUSH算法在Ceph分布式存储中的应用，涵盖算法原理、CRUSH Map结构、规则详解、性能优化等方面。'
 +++
 
 - [概述](#概述)

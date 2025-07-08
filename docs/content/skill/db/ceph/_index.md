@@ -6,4 +6,4 @@ description= "description"
 
 ### 内容
 
-{{%children style="h4" description="false" %}}
+{{%children style="h4" description="true" %}}

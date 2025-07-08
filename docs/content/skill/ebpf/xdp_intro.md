@@ -1,6 +1,7 @@
 +++
 title = 'XDP 简介'
 weight = 2
+description = 'XDP（eXpress Data Path）是 Linux 内核中的一种高性能、可编程网络数据包处理机制。本文将介绍 XDP 的工作原理、优点以及简单的使用示例。'
 +++
 
 - [XDP 工作原理](#xdp-工作原理)

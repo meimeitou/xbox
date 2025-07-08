@@ -1,5 +1,6 @@
 +++
 title = 'Tcpdump使用介绍'
+description = 'tcpdump 是一个命令行下的数据包分析器，用于捕获和显示网络流量。本文介绍了 tcpdump 的安装、基本用法、过滤表达式以及实用示例。'
 +++
 
 

@@ -1,5 +1,6 @@
 +++
 title = '家庭NAS'
+description = '使用Raspberry Pi搭建家庭网络存储'
 +++
 
 百度网盘要我35大洋一个月，家里网络也不行，忍不了必须得上方案，家庭NAS（Network Attached Storage）。

@@ -1,6 +1,7 @@
 +++
 title = 'Bpf2go'
 weight = 4
+description = 'bpf2go 是 Cilium eBPF 项目中用于将 eBPF C 代码自动生成 Go 绑定代码的工具，极大地方便了在 Golang 项目中集成 eBPF 程序。本文介绍 bpf2go 的工作原理、使用方法和常用技巧。'
 +++
 
 [bpf2go](https://github.com/cilium/ebpf/tree/master/cmd/bpf2go) 是 Cilium eBPF 项目中用于将 eBPF C 代码自动生成 Go 绑定代码的工具，极大地方便了在 Golang 项目中集成 eBPF 程序。本文介绍 bpf2go 的工作原理、使用方法和常用技巧。

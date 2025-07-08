@@ -1,6 +1,7 @@
 +++
 date = '2023-06-26T10:14:43+08:00'
 title = 'Raspberrypi'
+description = 'Raspberry Pi（树莓派）是一款由英国 Raspberry Pi 基金会开发的单板计算机，旨在促进计算机科学教育和技术创新。'
 +++
 
 ## 什么是 Raspberry Pi？

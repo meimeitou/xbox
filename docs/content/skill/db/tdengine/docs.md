@@ -7,7 +7,7 @@ weight = 5
 
 ## 简介
 
-https://docs.tdengine.com/
+<https://docs.tdengine.com/>
 
 TDengine 是一款开源、高性能、云原生的时序数据库 (Time-Series Database, TSDB)。TDengine 能被广泛运用于物联网、工业互联网、车联网、IT 运维、金融等领域。除核心的时序数据库功能外，TDengine 还提供缓存、数据订阅、流式计算等功能，是一极简的时序数据处理平台，最大程度的减小系统设计的复杂度，降低研发和运营成本。与其他时序数据库相比，TDengine 的主要优势如下：
 
