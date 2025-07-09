@@ -1,5 +1,5 @@
 +++
 date = '{{ .Date }}'
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-description = '{{ .Description }}'
+description = 'no description provided'
 +++
