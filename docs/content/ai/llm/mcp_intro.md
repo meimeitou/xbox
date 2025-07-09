@@ -1,6 +1,9 @@
 +++
 date = '2024-07-23T15:04:30+08:00'
 title = 'MCP介绍'
+description = '深入探讨MCP（Model Context Protocol）的架构设计、核心组件和实际应用场景，帮助你理解这一前沿技术'
+tags = ['MCP', '人工智能', '协议', '技术架构']
+categories = ['人工智能', '技术架构']
 +++
 
 MCP (Model Context Protocol) 详解：连接 AI 与外部世界的桥梁

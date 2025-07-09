@@ -10,4 +10,4 @@ pre= "<b>4. </b>"
 
 来点智能的!
 
-{{%children style="h4" %}}
+{{%children style="h4" description="true" %}}

@@ -1,5 +1,8 @@
 +++
 title = 'Deepseek模型'
+description = '探索DeepSeek模型的技术架构、应用场景和开源贡献，了解其在AI领域的创新与突破。'
+tags = ['DeepSeek', '大语言模型', 'AI技术', '开源']
+categories = ['人工智能', '大语言模型']
 +++
 
 

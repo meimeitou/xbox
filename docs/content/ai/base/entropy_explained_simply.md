@@ -1,5 +1,8 @@
 +++
 title = '熵'
+weight = 8
+description = '用最简单的方式理解熵的概念，探索其在信息论、物理学、机器学习等领域的应用。'
+math = true
 +++
 
 

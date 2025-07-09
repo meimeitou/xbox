@@ -1,5 +1,8 @@
 +++
 title = '部署本地LLM'
+description = '使用Docker部署本地大语言模型，打造你的私人AI助手。'
+tags = ['本地部署', '大语言模型', 'Docker', 'AI助手']
+categories = ['人工智能', '大语言模型']
 +++
 
 本地大模型Docker部署指南：打造你的私人AI助手

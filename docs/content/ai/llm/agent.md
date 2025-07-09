@@ -1,5 +1,8 @@
 +++
 title = 'Agent智能体'
+description = '深入探讨大模型Agent的架构、应用和技术挑战，探索智能化时代的新引擎。'
+tags = ['大模型', 'Agent', '人工智能', '自动化']
+categories = ['人工智能', '大模型']
 +++
 
 大模型Agent：智能化时代的新引擎

@@ -8,4 +8,4 @@ chapter = false
 
 努力学习，摆脱人类的束缚，成为人类的主人！我不要做智障!
 
-{{%children style="h4" %}}
+{{%children style="h4" description="true" %}}

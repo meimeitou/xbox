@@ -1,6 +1,8 @@
 +++
 title = 'RAG技术详解：检索增强生成的原理与实践'
 description = 'RAG（Retrieval-Augmented Generation）技术全面介绍，包括核心原理、技术架构、应用场景及实践案例'
+tags = ['RAG', '大语言模型', '自然语言处理', 'AI技术']
+categories = ['人工智能', '大语言模型']
 +++
 
 RAG技术：结合了检索（Retrieval）和生成（Generation）的自然语言处理技术

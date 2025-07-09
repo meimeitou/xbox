@@ -1,5 +1,8 @@
 +++
 title = 'Ollama+Deepseek自动化任务'
+description = '使用Ollama部署DeepSeek V2模型，构建自定义Agent，实现结构化输出和人工确认的自动化任务执行。'
+tags = ['Ollama', 'DeepSeek', '自动化任务', '大语言模型']
+categories = ['人工智能', '大语言模型']
 +++
 
 Ollama + DeepSeek V2 本地部署与自定义Agent自动化任务执行指南
