@@ -203,5 +203,3 @@ $$[f(g(x))]' = f'(g(x)) \cdot g'(x)$$
 - $\lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = e$
 - $\lim_{x \to 0} \frac{e^x - 1}{x} = 1$
 - $\lim_{x \to 0} \frac{\ln(1 + x)}{x} = 1$
-
-这些初等函数构成了数学分析的基础，是学习微积分、数学分析等高等数学课程的重要基石。

@@ -213,5 +213,3 @@ $$\frac{X_n - np}{\sqrt{np(1-p)}} \stackrel{d}{\to} N(0,1)$$
 - $\overline{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$
 - $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)$
 - $\frac{\overline{X} - \mu}{S/\sqrt{n}} \sim t(n-1)$
-
-这些概率统计的基础知识构成了统计推断、假设检验、回归分析等高级统计方法的理论基础。

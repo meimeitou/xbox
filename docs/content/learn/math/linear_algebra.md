@@ -257,5 +257,3 @@ $$T(\mathbf{x}) = A\mathbf{x}$$
 **像（值域）**：$\text{Im}(T) = \{T(\mathbf{v}) : \mathbf{v} \in V\}$
 
 **维数定理**：$\dim(V) = \dim(\ker(T)) + \dim(\text{Im}(T))$
-
-这些线性代数的基础知识为学习高等数学、数值分析、机器学习等领域提供了重要的数学工具。
