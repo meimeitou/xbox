@@ -1,8 +1,10 @@
 +++
-title = "Math"
+title = "数学基础"
 disableToc = false
 chapter = false
 weight = 1
+tags = ["math", "数学", "基础"]
+categories = ["数学基础", "数学"]
 +++
 
-[马同数学](https://www.matongxue.com/)
+{{%children style="h4" description="true" %}}
