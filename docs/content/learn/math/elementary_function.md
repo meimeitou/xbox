@@ -55,6 +55,7 @@ description = '初等函数的基本概念和性质'
 - $a^{m+n} = a^m \cdot a^n$
 - $a^{mn} = (a^m)^n$
 - $(ab)^n = a^n b^n$
+- $a^x = e^{x\ln a}$（指数函数的自然对数表示）
 
 **自然指数函数：** $f(x) = e^x$
 

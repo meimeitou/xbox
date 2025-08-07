@@ -1,6 +1,7 @@
 +++
 title = "Books"
 weight = 1
+description = "精选的编程和计算机科学书籍"
 +++
 
 1. 浙江大学 DAILY 实验室开源的大语言模型教材 <https://github.com/ZJU-LLMs/Foundations-of-LLMs>

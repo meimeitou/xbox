@@ -1,5 +1,5 @@
 +++
-title = "Learn"
+title = "好好学习"
 type = "chapter"
 weight = 11
 disableToc = false

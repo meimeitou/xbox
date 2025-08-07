@@ -2,6 +2,8 @@
 date = '2025-08-06T06:57:36+08:00'
 title = '微积分'
 description = '微积分基础知识和公式'
+tags = ["math", "数学", "基础"]
+categories = ["数学基础", "数学"]
 +++
 
 ## 1. 极限 (Limits)
