@@ -197,3 +197,4 @@ cython_debug/
 public
 .hugo_build.lock
 _vendor
+.vscode

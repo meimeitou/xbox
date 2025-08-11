@@ -1,0 +1,21 @@
+services:
+  jupyterlab:
+    image: quay.io/jupyter/scipy-notebook:2025-08-04
+    container_name: jupyterlab
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./tls:/etc/ssl/notebook
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - DOCKER_STACKS_JUPYTER_CMD=lab
+      # 是否自动生成证书
+      - GEN_CERT=no
+    # pw: yinqiwei
+    command: |
+      start-notebook.py --ServerApp.base_url=/
+      --ServerApp.password='argon2:$$argon2id$$v=19$$m=10240,t=10,p=8$$BddMOiwDJ5A+lhIxQrkWdg$$T260ScvgWLnSNmB9f5nCcL1sOwOnFRZQplB++wVqQ5Q'
+      --ServerApp.keyfile=/etc/ssl/notebook/notebook.key
+      --ServerApp.certfile=/etc/ssl/notebook/notebook.crt
+    restart: unless-stopped
