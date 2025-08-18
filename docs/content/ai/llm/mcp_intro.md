@@ -8,8 +8,6 @@ categories = ['人工智能', '技术架构']
 
 MCP (Model Context Protocol) 详解：连接 AI 与外部世界的桥梁
 
-*作者：meimeitou*
-
 - [引言](#引言)
 - [什么是 MCP？](#什么是-mcp)
   - [核心特性](#核心特性)
@@ -508,7 +506,5 @@ MCP 作为连接 AI 与外部世界的桥梁，为开发者提供了强大而灵
 
 ## 参考资源
 
-- [MCP 官方文档](https://github.com/anthropics/mcp)
-- [Python MCP SDK](https://github.com/anthropics/mcp-sdk-python)
-- [MCP 服务器示例](https://github.com/anthropics/mcp-server-examples)
-- [Python 异步编程指南](https://docs.python.org/3/library/asyncio.html)
+- [MCP 官方文档](https://modelcontextprotocol.io/docs/getting-started/intro)
+- [Python MCP SDK](https://github.com/modelcontextprotocol/python-sdk)
