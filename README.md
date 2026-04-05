@@ -4,6 +4,14 @@
 
 [文档地址](https://meimeitou.github.io/xbox/)
 
+## 环境
+
+```shell
+go install github.com/gohugoio/hugo@latest
+# or
+brew install hugo
+```
+
 ## 目录
 
 - scripts: 整理一些脚本
