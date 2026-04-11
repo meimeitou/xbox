@@ -198,3 +198,5 @@ public
 .hugo_build.lock
 _vendor
 .vscode
+d2l/pytorch
+d2l/d2l-zh

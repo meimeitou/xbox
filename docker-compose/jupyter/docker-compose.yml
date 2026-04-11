@@ -15,7 +15,7 @@ services:
     # pw: admin
     command: |
       start-notebook.py --ServerApp.base_url=/
-      --ServerApp.password='argon2:$argon2id$v=19$m=10240,t=10,p=8$3/9UgtjFysaSkaZ7Zzmryw$K1nrBSMWztukex2+C+axtEdBJuHoTlHUEkldbXIdQGc'
+      --ServerApp.password='argon2:$$argon2id$$v=19$$m=10240,t=10,p=8$$3/9UgtjFysaSkaZ7Zzmryw$$K1nrBSMWztukex2+C+axtEdBJuHoTlHUEkldbXIdQGc'
       --ServerApp.keyfile=/etc/ssl/notebook/notebook.key
       --ServerApp.certfile=/etc/ssl/notebook/notebook.crt
     restart: unless-stopped
