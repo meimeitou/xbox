@@ -12,6 +12,16 @@ go install github.com/gohugoio/hugo@latest
 brew install hugo
 ```
 
+## 使用
+
+```shell
+hugo server -D
+
+# 添加
+hugo new 
+hugo new --kind chapter tools/xxx.md
+```
+
 ## 目录
 
 - scripts: 整理一些脚本
