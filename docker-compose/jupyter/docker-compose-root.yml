@@ -6,10 +6,12 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ./:/home/jovyan/work
+      - ./data:/home/jovyan/work:rw
     environment:
       - JUPYTER_ENABLE_LAB=yes
       - DOCKER_STACKS_JUPYTER_CMD=lab
+      - CHOWN_EXTRA=/home/jovyan/work
+      - CHOWN_EXTRA_OPTS=-R
       # 是否自动生成证书
       - GEN_CERT=yes
       # 以 root 运行，保持默认用户但授予 sudo

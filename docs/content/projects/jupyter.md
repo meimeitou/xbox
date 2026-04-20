@@ -105,8 +105,8 @@ c.ServerApp.ip = '0.0.0.0'
 # 设置端口
 c.ServerApp.port = 8888
 
-# 设置密码哈希
-c.PasswordIdentityProvider.hashed_password = 'your_hashed_password_here'
+# 设置密码哈希 admin
+c.PasswordIdentityProvider.hashed_password = 'argon2:$argon2id$v=19$m=10240,t=10,p=8$S1u8YUN1fRlLyPr6uvz7lA$M38b5X4LLNavpP9hmK7+HnQXopzLXTZ1e8KvAJsxuBM'
 
 # 禁用浏览器自动打开
 c.ServerApp.open_browser = False
